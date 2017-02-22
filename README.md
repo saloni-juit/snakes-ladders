@@ -27,6 +27,4 @@ b) For Cards UI :
 
 If you make any changes in controller.js/game.css, make sure to update the minified version or update game.html to accept the unminified version.
 
-The Responsive is design is extended till a tablet(around 500px) because of the nature of the board.Though, it can be extended if we use a dynamic board.
-
--Saloni
+-The Responsive is design is extended till a tablet(around 500px) because of the nature of the board.Though, it can be extended if we use a dynamic board.
