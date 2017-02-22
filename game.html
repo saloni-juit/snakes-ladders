@@ -1,0 +1,82 @@
+<html ng-app="snlApp" class="ng-scope">
+
+<head>
+    <title>Snakes and Ladders</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="styles/game.min.css" rel="stylesheet">
+    <script type="text/javascript" src="libs/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-route.js"></script>
+    <script src="js/controller.min.js"></script>
+    <!-- <script src="js/controller.js"></script> -->
+    <!-- <link href="styles/game.css" rel="stylesheet"> -->
+</head>
+
+<body class="center">
+    <div class="welcome" ng-hide="showBoard">
+        <div class="header">
+            <img src="images/head.png" />
+        </div>
+        <div class="iblock">
+            <ul class="game-options" ng-controller="GameCtrl">
+                <li ng-click="setSettings(1)">Single Player against Computer</li>
+                <li ng-click="showMulti = true">Multi Player (Max 4,Min 2)</li>
+                <!-- Add a new player -->
+                <div ng-if="showMulti">
+                    <input type="number" id="txtNumPlayers" class="textbox" ng-model="numberPlayers" placeholder="Number of players" max="4" min="1" />
+                    <button class="add-player" id="btnAddPlayer" ng-click="setSettings(numberPlayers)">Start Game</button>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div ng-controller="BoardCtrl" class="ng-scope snl-cont" ng-show="showBoard">
+        <ul class="tokens">
+            <li class="player0">
+                <img src="images/token1.png" />
+            </li>
+            <li class="player1">
+                <img src="images/token2.png" />
+            </li>
+            <li class="player2">
+                <img src="images/token3.png" />
+            </li>
+            <li class="player3">
+                <img src="images/token4.png" />
+            </li>
+        </ul>
+        <ul class="snl-board">
+            <li data-start="{{square.start + 1}}" class="snl-square ng-scope ng-binding" ng-class="{fright : square.isEven === true,snake: square.start > square.end, ladder:square.start < square.end, p0active:square.start === players[0].currentPos,p1active:square.start === players[1].currentPos,p2active:square.start === players[2].currentPos,p3active:square.start === players[3].currentPos}" ng-repeat="square in board">{{square.end + 1}}</li>
+        </ul>
+        <div class="ng-scope" ng-show="showBoard">
+            <div class="round-button" ng-click="startGame()" ng-hide="gameOver">
+                <div class="round-button-circle">
+                    <a class="round-button">
+                Player {{currentPlayer+1}}'s turn</a>
+                </div>
+            </div>
+            <div ng-show="gameOver">Player {{winner}} won</div>
+        </div>
+        <div class="stats-data">
+            <div class="column" ng-repeat="item in stats track by $index" ng-model="stats" ng-mouseover="sortableUI()">
+                <div class="portlet">
+                    <div class="portlet-header">Player {{$index+1}}</div>
+                    <div class="portlet-content">
+                        <div>Throws : {{item.throws}}</div>
+                        <div>Sixes : {{item.sixes}}</div>
+                        <div>Ladders : {{item.ladders}}</div>
+                        <div>Snakes : {{item.snakes}}</div>
+                        <div>Best Throw : {{item.bestThrow}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-loader" ng-show="isLoading"></div>
+    <div class="loader-cont" ng-show="isLoading">
+        <div class="loader-content">{{isLoadingText}}</div>
+    </div>
+</body>
+
+</html>

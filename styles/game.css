@@ -1,0 +1,353 @@
+@font-face {
+    font-family: 'Dinnext';
+    src: url('../fonts/din-next-lt-pro-regular.eot') format('embedded-opentype'), url('../fonts/din-next-lt-pro-regular.woff') format('woff'), url('../fonts/din-next-lt-pro-regular.ttf') format('truetype'), url('../fonts/din-next-lt-pro-regular.svg') format('svg');
+}
+
+body {
+    font-family: 'Dinnext', 'Arial';
+    font-size: 16px;
+    color: #006600;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+div.welcome .header {
+    
+}
+
+div.welcome .subheader {
+    font-size: 40px;
+    padding: 10px;
+}
+
+.ctext {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    display: inline-block;
+    padding: 4px 6px;
+    color: #555555;
+    vertical-align: middle;
+    font-size: 20px;
+    -webkit-box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.game-options{
+    margin-top: 50px;
+    display: inline-block;
+    list-style-type: none;
+}
+
+.game-options li {
+    padding: 10px;
+    background: #8BB694;
+    border-radius: 2px;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.game-options li:first-child{
+    margin-bottom: 25px;
+}
+
+.iblock {
+    display: inline-block
+}
+
+.padding10 {
+    padding: 10px;
+}
+
+div.snl-cont {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.stats-data{
+    width: 40%;
+    float: right;
+}
+
+.snl-cont .start-text{
+    font-size: 16px;
+}
+
+.snl-board {
+    height: 500px;
+    width: 570px;
+    padding: 0;
+    float: left;
+    margin-left: 50px;
+    min-height: 586px;
+}
+
+.center {
+    text-align: center;
+}
+
+.snl-square {
+    width: 55px;
+    height: 55px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    list-style-type: none;
+    border: 1px solid #e3e3e3;
+    background: #ffffff;
+    color: #000;
+    font-size: 20px;
+}
+
+/*li.snl-square:nth-child(n+1) {
+    background-color: yellow;
+}
+
+li.snl-square:nth-child(2n+2) {
+    background-color: white;
+}
+
+li.snl-square:nth-child(3n+3) {
+    background-color: red;
+}
+
+li.snl-square:nth-child(4n+4) {
+    background-color: blue;
+}
+
+li.snl-square:nth-child(5n+5) {
+    background-color: green;
+}*/
+
+.textbox{
+    height: 38px;
+    font: 14px 'Dinnext';
+    width: 44%;
+}
+
+.textbox.ng-invalid{
+    border:solid 1px red;
+}
+
+.fright {
+    float: right;
+}
+
+.snake {
+    background: url('../images/snake.png');
+    background-size: cover;
+}
+
+.ladder {
+    background: url('../images/ladder.png');
+    background-size: cover;
+}
+
+.loader-cont {
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    padding: 10px;
+    height: 30px;
+}
+
+.loader-content {
+    color: #fff;
+    background: #000000;
+    padding: 10px;
+    border-radius: 3px;
+    min-width: 100px;
+}
+
+.bg-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #5A5A5A;
+    opacity: 0.7;
+}
+
+.playGame {
+    cursor: pointer;
+}
+
+/*.p0active {
+    background: #76e4e3 !important;
+}
+
+.p1active {
+    background: #811 !important;
+}
+
+.p2active {
+    background: #597272 !important;
+}
+
+.p3active {
+    background: #311 !important;
+}*/
+
+button,.add-player {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 10px 35px;
+    font-size: 25px;
+    line-height: 1.8;
+    box-shadow: none;
+    border-radius: 0;
+    font:14px 'Dinnext';
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none
+}
+
+.tokens{
+    list-style-type: none;
+}
+
+.tokens li img{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.tokens .player0 img{
+    top: 545px;
+    left: 21px;
+}
+
+.tokens .player1 img{
+    top: 568px;
+    left: 19px;
+}
+
+.tokens .player2 img{
+    top: 545px;
+    left: 44px;
+}
+
+.tokens .player3 img{
+    top: 568px;
+    left: 44px;
+}
+
+.round-button {
+    width: 9%;
+    float: left;
+    margin: 0% 2%;
+    cursor: pointer;
+}
+
+.round-button-circle {
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    border:10px solid #cfdcec;
+    overflow:hidden;
+    background: purple; 
+    box-shadow: 0 0 3px gray;
+}
+.round-button-circle:hover {
+    background:#30588e;
+}
+.round-button a {
+    display:block;
+    float:left;
+    width:93%;
+    padding-top:50%;
+    padding-bottom:50%;
+    line-height:1em;
+    margin-top:-1em;   
+    text-align:center;
+    color:#e2eaf3;
+    font:normal 1em 'Dinnext';
+    text-decoration:none;
+}
+
+
+/*trello sortable */
+.stats-data{
+     min-width: 520px;
+}
+
+.tilt.right {
+    transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+}
+.tilt.left {
+    transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+}
+.column {
+    width: 170px;
+    float: left;
+    padding-bottom: 50px;
+}
+.portlet {
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+    background-color: aliceblue;
+    border: solid 1px black;
+}
+.portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+.portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+.portlet-content {
+    padding: 0.4em;
+}
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+
+/*media queries*/
+@media only screen and (max-width: 660px) {
+    .stats-data{
+        margin-left: 50px;
+        margin-top: 100px;
+        float: left;
+    }
+
+    .round-button{
+        width: 22%;
+        margin: 2% 0 0 37%;
+    }
+}
+
