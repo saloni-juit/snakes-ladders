@@ -341,13 +341,13 @@ button:focus {
 @media only screen and (max-width: 660px) {
     .stats-data{
         margin-left: 50px;
-        margin-top: 100px;
+        margin-top: 50px;
         float: left;
     }
 
     .round-button{
         width: 22%;
-        margin: 2% 0 0 37%;
+        margin: 2% 0 0 8%;
     }
 }
 
